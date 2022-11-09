@@ -1,0 +1,39 @@
+[package]
+name = "instrumenter"
+version = "0.1.0"
+authors = ["Andrea Cracco <guilucand@gmail.com>"]
+edition = "2021"
+categories = []
+description = "Basic framework to allow collecting tracing data and hw counters on multithreaded applications"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Guilucand/instrumenter-rs"
+
+[lib]
+
+[[bin]]
+name = "analyzer"
+path = "src/binaries/analyzer.rs"
+required-features = ["analyzer"]
+
+[dependencies]
+instrumenter-proc-macro = { path = "instrumenter-proc-macro-rs" }
+dashmap = "5.4.0"
+parking_lot = "0.12.1"
+thread_local = "1.1.4"
+
+# Tracing libraries
+tracing = { version = "0.1.37", optional = true }
+libc = { version = "0.2.134", optional = true }
+serde = { version = "1.0.145", features = ["serde_derive"], optional = true }
+serde_json = { version = "1.0.85", optional = true }
+
+# Analyzer libraries
+human_format = { version = "1.0.3", optional = true }
+structopt = { version = "0.3.26", optional = true }
+plotters = { version = "0.3.4", optional = true }
+papi-bindings = { version = "0.5.0", optional = true }
+
+[features]
+# Enabled triggers
+enabled = ["tracing", "libc", "papi-bindings", "serde", "serde_json", "instrumenter-proc-macro/enabled"]
+analyzer = ["human_format", "structopt", "plotters", "enabled"]

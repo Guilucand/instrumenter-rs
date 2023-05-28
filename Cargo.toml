@@ -1,6 +1,6 @@
 [package]
 name = "instrumenter"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Andrea Cracco <guilucand@gmail.com>"]
 edition = "2021"
 categories = []
@@ -22,16 +22,16 @@ thread_local = "1.1.7"
 
 # Tracing libraries
 tracing = { version = "0.1.37", optional = true }
-libc = { version = "0.2.139", optional = true }
-serde = { version = "1.0.152", features = ["serde_derive"], optional = true }
-serde_json = { version = "1.0.93", optional = true }
+libc = { version = "0.2.142", optional = true }
+serde = { version = "1.0.160", features = ["serde_derive"], optional = true }
+serde_json = { version = "1.0.96", optional = true }
 
 # Analyzer libraries
 human_format = { version = "1.0.3", optional = true }
 structopt = { version = "0.3.26", optional = true }
 plotters = { version = "0.3.4", optional = true }
-papi-bindings = { version = "0.5.0", optional = true }
-instrumenter-proc-macro = "0.1.0"
+papi-bindings = { version = "0.5.2", optional = true }
+instrumenter-proc-macro = "0.1.1"
 
 [features]
 # Enabled triggers

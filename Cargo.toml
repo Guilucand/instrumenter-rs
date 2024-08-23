@@ -1,6 +1,6 @@
 [package]
 name = "instrumenter"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Andrea Cracco <guilucand@gmail.com>"]
 edition = "2021"
 categories = []
@@ -30,7 +30,7 @@ serde_json = { version = "1.0.118", optional = true }
 human_format = { version = "1.1.0", optional = true }
 structopt = { version = "0.3.26", optional = true }
 plotters = { version = "0.3.6", optional = true }
-papi-bindings = { version = "0.5.2", optional = true }
+papi-bindings = { version = "0.5.3", optional = true }
 instrumenter-proc-macro = "0.1.1"
 
 [features]
